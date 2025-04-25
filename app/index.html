@@ -2,98 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>YOGA FIT</title>
-    <link rel="stylesheet" href="main.css" />
+    <title>Yoga Fit</title>
+    <link rel="stylesheet" href="./main.css" />
   </head>
   <body>
-    <div id="app">
-      <header>
-        <h1>YOGA FIT</h1>
-        <nav>
-          <ul>
-            <li><a href="#" id="about-link-footer">About</a></li>
-            <li><a href="#" id="classes-link" class="active">Classes</a></li>
-            <li><a href="#">1-2-1</a></li>
-            <li><a href="#">Journal</a></li>
-            <li><a href="#">Newsletter</a></li>
-          </ul>
-        </nav>
-        
-      </header>
+    <!-- Add these matching containers -->
+    <header id="site-header"></header>
+    <main id="main-content"></main>
+    <footer id="site-footer"></footer>
 
-      <section class="intro">
-        <p class="tagline">Discover a practice that makes you</p>
-        <h2>
-          STRONGER CALMER PRESENT<br />
-          BALANCED FOCUSED PATIENT<br />
-          <span class="spaced">S P A C I O U S</span>
-        </h2>
-        <button class="cta">CLASS INFORMATION</button>
-      </section>
-
-      <section class="gallery">
-        <div class="gallery-item">
-          <img src="public/images/woman-practicing-yoga.png" alt="Yoga pose" />
-          <p><strong>FIND</strong></p>
-        </div>
-        <div class="gallery-item">
-          <img src="public/images/yoga-mandala.png" alt="Yoga pose" />
-          <p><strong>YOUR</strong></p>
-        </div>
-        <div class="gallery-item">
-          <img src="public/images/yoga-expert-icon-1.png" alt="Yoga pose" />
-          <p><strong>FLOW</strong></p>
-        </div>
-      </section>
-
-      <section class="text-block">
-        <p>Yoga is a practice to support you through every part of life.</p>
-        <p>
-          Establishing connection between the breath and body can teach us how to move through
-          the changes and challenges we will inevitably encounter. Building strength and flexibility
-          both mentally and physically.
-        </p>
-        <p>I look forward to meeting you on the mat.</p>
-      </section>
-
-      <footer>
-        <ul>
-          <li><a href="#" id="about-link-footer">About</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Follow</a></li>
-        </ul>
-        <p>YOGA FIT</p>
-      </footer>
-    </div>
-
+    <!-- Load homepage.js via inline script -->
     <script type="module">
-      import { loadAboutPage } from '../src/pages/about.js';
-
-    
-      document.getElementById("about-link-footer").addEventListener("click", (e) => {
-        e.preventDefault();
-        loadAboutPage();
-        document.getElementById("about-link-footer").addEventListener("click", (e) => {
-          e.preventDefault();
-          loadAboutPage();
-        });
-        
-      });
-    </script>
-    
-    <script type="module">
-      import { loadClassesPage } from '../src/pages/classes.js';
-    
+      import { loadHomepage } from "../src/pages/homepage.js";
       window.addEventListener("DOMContentLoaded", () => {
-        const classesLink = document.getElementById("classes-link");
-        if (classesLink) {
-          classesLink.addEventListener("click", (e) => {
-            e.preventDefault();
-            loadClassesPage();
-          });
-        }
+        loadHomepage();
       });
+      
     </script>
+  
   </body>
-</html> 
+</html>
