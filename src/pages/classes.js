@@ -1,14 +1,9 @@
+// src/pages/Classes.js
 import { renderLayout } from '../layout/renderLayout.js';
-import { headerHTML } from '../layout/header.js';
-import { footerHTML } from '../layout/footer.js';
+import { headerHTML } from '../layout/header.js'; 
 import { loadAboutPage } from './About.js';
 
 export function loadClassesPage() {
-  const headerHTML = `
-    <h1>YOGA FIT</h1>
-    
-  `;
-
   const mainHTML = `
     <section class="classes-intro">
       <h2>Weekly Classes</h2>
@@ -41,7 +36,7 @@ export function loadClassesPage() {
     </section>
   `;
 
-  const footerHTML = `
+  const footerContent = `
     <ul>
       <li><a href="#" id="about-link-footer">About</a></li>
       <li><a href="#">Contact</a></li>
@@ -50,6 +45,37 @@ export function loadClassesPage() {
     <p>YOGA FIT</p>
   `;
 
-  renderLayout(headerHTML, mainHTML, footerHTML);
+  // Now PASS the real header
+  renderLayout(headerHTML, mainHTML, footerContent);
+
   setupLinkHandlers();
+}
+
+function setupLinkHandlers() {
+  // Make "Classes" nav link active
+  document.querySelectorAll('.nav-list a').forEach(link => {
+    link.classList.remove('active');
+  });
+  const classesLink = document.querySelector('a[href="#classes"]');
+  if (classesLink) {
+    classesLink.classList.add('active');
+  }
+
+  // Make Logo clickable
+  const logo = document.querySelector('.logo');
+  if (logo) {
+    logo.style.cursor = 'pointer';
+    logo.addEventListener('click', () => {
+      window.location.reload();
+    });
+  }
+
+  // Footer "About" link
+  const aboutFooterLink = document.getElementById('about-link-footer');
+  if (aboutFooterLink) {
+    aboutFooterLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      loadAboutPage();
+    });
+  }
 }
