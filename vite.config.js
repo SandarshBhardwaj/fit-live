@@ -5,7 +5,7 @@ export default defineConfig({
  
   publicDir: '../images', // Serve from /images folder
   build: {
-    outDir: '../dist', // Output folder
+    outDir: 'dist', 
     emptyOutDir: true
   }
 });
