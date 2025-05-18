@@ -1,5 +1,5 @@
 import { loadHomepage } from './Homepage.js';
-import { loadAboutPage } from './About.js';
+import { loadAboutPage } from './about.js';
 import { loadClassesPage } from './classes.js';
 
 export function setupLinkHandlers() {

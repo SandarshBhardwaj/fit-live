@@ -1,7 +1,7 @@
 // src/pages/Classes.js
 import { renderLayout } from '../layout/renderLayout.js';
 import { headerHTML } from '../layout/header.js'; 
-import { loadAboutPage } from './About.js';
+import { loadAboutPage } from './about.js';
 
 export function loadClassesPage() {
   const mainHTML = `
