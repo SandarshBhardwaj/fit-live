@@ -3,7 +3,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
  
-  publicDir: '../images', // Serve from /images folder
+  publicDir: 'images', 
   build: {
     outDir: 'dist', 
     emptyOutDir: true
