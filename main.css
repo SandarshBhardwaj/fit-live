@@ -585,4 +585,110 @@
   #nextBtn {
     right: 0;
   }
+/* Structural Improvements */
+.about-section {
+  background: white;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 2rem 0;
+}
+
+.content-card {
+  border: 2px solid #f3ddca !important;
+  transition: all 0.3s ease;
+  position: relative;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Typography Alignment */
+.page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+/* Grid Layouts */
+.evolution-grid .milestone-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.milestone {
+  padding: 1.5rem;
+  background: #f9f9f9;
+  border-radius: 6px;
+}
+
+.credentials-wrapper .credential-list {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.credential-item {
+  padding: 1.5rem;
+  border-left: 3px solid #ddd;
+}
+
+/* CTA Alignment */
+.cta-group {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.cta-box {
+  flex: 1;
+  max-width: 300px;
+  padding: 1.5rem;
+  text-align: center;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.cta-box:hover {
+  transform: translateY(-3px);
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .cta-group {
+    flex-direction: column;
+  }
   
+  .cta-box {
+    max-width: 100%;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+}

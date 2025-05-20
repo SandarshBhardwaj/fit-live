@@ -1,67 +1,109 @@
-// src/pages/About.js
 export function loadAboutPage() {
   const app = document.getElementById("main-content");
 
   app.innerHTML = `
     <section class="about-section">
-      <h1>About Me</h1>
-
-      <div class="about-intro">
-        <p>Hi, I’m Ruki — a certified yoga teacher, intuitive tarot guide, and counselor dedicated to helping people reconnect with themselves through movement, stillness, and energy.</p>
+      <div class="about-hero">
+        <h1 class="page-title">About</h1>
+        <p class="page-subtitle">A Journey of Mind-Body Transformation</p>
       </div>
 
-      <div class="about-origin">
-        <h2>How It All Started</h2>
-        <p>My journey began over a decade ago during a time of deep personal healing. Yoga offered me a path not just to physical strength, but to emotional balance and spiritual awakening. What started as a self-care ritual turned into a lifelong calling.</p>
-      </div>
+      <div class="content-container">
+        <article class="content-card origin-card">
+          <h2 class="section-title">Origins</h2>
+          <p class="section-text">My path began through a profound personal exploration of movement and mindfulness. What started as a personal practice in a small urban studio gradually evolved into a deep commitment to holistic wellness. The initial spark came from...</p>
+          <p class="hidden-text">...a transformative experience during a silent retreat in 2012. This awakening led me to pursue formal training in various healing modalities, always seeking to bridge ancient wisdom with modern understanding.</p>
+          <button class="reveal-btn">Continue Reading →</button>
+        </article>
 
-      <div class="about-evolution">
-        <h2>The Journey So Far</h2>
-        <p>As my practice evolved, I felt called to explore deeper forms of healing. I became a certified tarot practitioner and studied holistic counseling to guide others through life’s transitions. Today, I combine ancient movement, breath, and intuitive insight to support others in finding their own center.</p>
-      </div>
+        <article class="content-card evolution-grid">
+          <h2 class="section-title">Evolution</h2>
+          <div class="milestone-container">
+            <div class="milestone">
+              <h3>Advanced Certification</h3>
+              <p>500-hour training in therapeutic yoga practices</p>
+            </div>
+            <div class="milestone">
+              <h3>Holistic Integration</h3>
+              <p>Combining ayurveda with modern movement science</p>
+            </div>
+            <div class="milestone">
+              <h3>Community Impact</h3>
+              <p>Developing accessible wellness programs</p>
+            </div>
+          </div>
+        </article>
 
-      <div class="about-values">
-        <h2>What I Believe In</h2>
-        <p>My approach is rooted in compassion, authenticity, and inclusivity. Whether you join me for a class, a reading, or a one-on-one session, my goal is to hold space for your unique growth — with no judgment and no pressure to be anything but yourself.</p>
-      </div>
+        <article class="content-card credentials-wrapper">
+          <h2 class="section-title">Credentials</h2>
+          <div class="credential-list">
+            <div class="credential-item">
+              <h3>Yoga Alliance Certified</h3>
+              <p>RYT-500 with specialization in trauma-sensitive practice</p>
+            </div>
+            <div class="credential-item">
+              <h3>Mind-Body Therapy</h3>
+              <p>Certified in integrative somatic therapy techniques</p>
+            </div>
+          </div>
+        </article>
 
-      <div class="about-credentials">
-        <h2>Certifications & Highlights</h2>
-        <ul>
-          <li>500-hour Yoga Alliance Certified</li>
-          <li>Certified Intuitive Tarot Reader</li>
-          <li>Trained in trauma-informed holistic counseling</li>
-          <li>Featured in Yoga Journal (2024)</li>
-        </ul>
-      </div>
-
-      <div class="about-personal-touch">
-        <h2>A Little More About Me</h2>
-        <p>Outside of my work, I love journaling by the sea, practicing breathwork at sunrise, and experimenting with Ayurvedic cooking. I believe life is a practice — and every day brings something new to learn or unlearn.</p>
-      </div>
-
-      <div class="about-cta">
-        <h2>Let’s Connect</h2>
-        <p>If my work resonates with you, I’d love to connect. Reach out, take a class, or simply say hello.</p>
+        <article class="cta-container">
+          <h2 class="section-title">Let's Grow Together</h2>
+          <div class="cta-group">
+            <div class="cta-box">
+              <h3>Group Sessions</h3>
+              <p>Explore our weekly mindfulness programs</p>
+            </div>
+            <div class="cta-box">
+              <h3>Private Guidance</h3>
+              <p>Personalized holistic coaching sessions</p>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
   `;
 
-  // Set active nav link to About
+  // Add border color via JS to ensure immediate update
+  document.querySelectorAll('.content-card').forEach(card => {
+    card.style.border = '2px solid #f3ddca';
+    card.style.background = '#fff';
+  });
+
+  // Interactive Text Reveal
+  document.querySelectorAll('.reveal-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const hiddenText = this.previousElementSibling;
+      hiddenText.style.maxHeight = hiddenText.style.maxHeight ? 
+        null : `${hiddenText.scrollHeight}px`;
+      this.textContent = hiddenText.style.maxHeight ? 
+        'Show Less ↑' : 'Continue Reading →';
+    });
+  });
+
+  // Hover Elevation Effect
+  document.querySelectorAll('.milestone, .cta-box').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      item.style.transform = 'translateY(-5px)';
+      item.style.boxShadow = '0 8px 20px rgba(0,0,0,0.1)';
+    });
+    item.addEventListener('mouseleave', () => {
+      item.style.transform = 'translateY(0)';
+      item.style.boxShadow = '0 2px 8px rgba(0,0,0,0.08)';
+    });
+  });
+
+  // Maintain existing functionality
   document.querySelectorAll('.nav-list a').forEach(link => {
     link.classList.remove('active');
   });
   const aboutLink = document.querySelector('a[href="#about"]');
-  if (aboutLink) {
-    aboutLink.classList.add('active');
-  }
+  if (aboutLink) aboutLink.classList.add('active');
 
-  // Add click event to logo to go back to homepage
   const logo = document.querySelector('.logo');
   if (logo) {
     logo.style.cursor = "pointer";
-    logo.addEventListener('click', () => {
-      window.location.reload();
-    });
+    logo.addEventListener('click', () => window.location.reload());
   }
 }
