@@ -187,15 +187,23 @@ function generateClassItem(day, type, time, location) {
 
 
 function setupLinkHandlers() {
-  // Handle nav link clicks
+  // Handle all nav links
   document.querySelectorAll('.nav-list a').forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       const page = link.getAttribute('href').substring(1);
+      
+      // Clear current content
+      const app = document.getElementById("main-content");
+      app.innerHTML = '';
+      
+      // Load appropriate page
       if(page === 'about') loadAboutPage();
       if(page === 'classes') loadClassesPage();
+      // Add other pages as needed
     });
   });
+
 
   // Set active class
   document.querySelectorAll('.nav-list a').forEach(link => {
