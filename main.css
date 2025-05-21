@@ -692,3 +692,225 @@
     font-size: 1.5rem;
   }
 }
+/* Divider Lines */
+.section-divider {
+  border-top: 2px solid #6D4C41;
+  margin: 3rem 10%;
+  position: relative;
+}
+
+.section-divider-top {
+  border-top: 4px solid #F3DDCA;
+  margin: 0 10% 2rem;
+}
+
+/* Alternating Layout */
+.class-type {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem 10%;
+  min-height: 400px;
+}
+
+.alternate-right .class-content { order: 2; }
+.alternate-right .class-visual { order: 1; }
+
+.class-visual {
+  position: relative;
+  background: #F3DDCA;
+  min-height: 300px;
+}
+
+.quote-mark {
+  position: absolute;
+  font-size: 6rem;
+  color: #6D4C41;
+  font-family: serif;
+}
+
+.alternate-left .quote-mark { left: -10px; top: -30px; }
+.alternate-right .quote-mark { right: -10px; bottom: -30px; }
+
+/* Form Styling */
+.registration-form {
+  padding: 2rem 10%;
+  background: #FFF8F0;
+}
+
+.form-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Element Grid */
+.element-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.element {
+  padding: 1rem;
+  border: 2px solid #F3DDCA;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .class-type {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .quote-mark {
+    display: none;
+  }
+}
+/* Add to main.css */
+:root {
+  --peach: #F3DDCA;
+  --dark-brown: #4A302C;
+  --text-brown: #66554F;
+}
+
+.registration-form {
+  background: white;
+  border: 2px solid var(--peach);
+  border-radius: 12px;
+  padding: 3rem;
+  margin: 2rem 15%;
+}
+
+.form-grid input,
+.form-grid select {
+  border: 1px solid var(--peach) !important;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+button[type="submit"] {
+  background: white;
+  color: var(--dark-brown);
+  border: 2px solid var(--peach);
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background: var(--peach);
+  color: white;
+}
+
+h2, h3 {
+  color: var(--dark-brown);
+  font-weight: 700;
+  text-align: center;
+}
+
+.class-hero p {
+  color: var(--text-brown);
+  font-weight: 400;
+  text-align: center;
+}
+/* Weekly Classes */
+.centered-section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.class-card {
+  background: white;
+  border: 2px solid var(--peach);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.class-card:hover {
+  transform: translateY(-5px);
+}
+
+.class-type {
+  color: var(--dark-brown);
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+/* Coaching Form */
+.coaching-form {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: white;
+  border: 2px solid var(--peach);
+  border-radius: 12px;
+}
+
+.form-column {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5rem;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  color: var(--dark-brown);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--peach);
+  border-radius: 8px;
+  background: rgba(243, 221, 202, 0.1);
+}
+
+.form-submit {
+  background: white;
+  color: var(--dark-brown);
+  border: 2px solid var(--peach);
+  padding: 1rem 2rem;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.form-submit:hover {
+  background: var(--peach);
+  color: white;
+}
+
+.required {
+  color: #c44536;
+}
+
+@media (max-width: 768px) {
+  .form-column {
+    grid-template-columns: 1fr;
+  }
+  
+  .coaching-form {
+    margin: 2rem;
+    padding: 1.5rem;
+  }
+}
