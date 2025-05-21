@@ -1,11 +1,22 @@
-// vite.config.js
 import { defineConfig } from 'vite';
+import { resolve } from 'path';
 
 export default defineConfig({
- 
-  publicDir: 'images', 
   build: {
-    outDir: 'dist', 
-    emptyOutDir: true
+    outDir: 'dist',
+    assetsDir: 'assets',
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html')
+      },
+      output: {
+        assetFileNames: (assetInfo) => {
+          if (/\.(png|jpe?g|svg|gif)$/.test(assetInfo.name)) {
+            return 'images/[name][extname]'; 
+          }
+          return 'assets/[name][extname]';
+        }
+      }
+    }
   }
 });
