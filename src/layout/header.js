@@ -1,7 +1,7 @@
 export const headerHTML = `
   <div class="header-container">
     <div class="logo-container">
-      <img src="/images/logo.png" alt="Yoga Fit Logo" class="logo" />
+      <img src="./images/logo.png" alt="Yoga Fit Logo" class="logo" />
     </div>
     <nav>
       <ul class="nav-list">
