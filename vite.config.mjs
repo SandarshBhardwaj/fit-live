@@ -3,13 +3,13 @@ import { resolve } from 'path';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
-  base: './',
+  base: './', // important!
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html')
+        main: resolve(__dirname, 'index.html'),
       },
       output: {
         assetFileNames: (assetInfo) => {
@@ -17,18 +17,18 @@ export default defineConfig({
             return 'images/[name][extname]';
           }
           return 'assets/[name][extname]';
-        }
-      }
-    }
+        },
+      },
+    },
   },
   plugins: [
     viteStaticCopy({
       targets: [
         {
           src: 'images/*',
-          dest: ''
-        }
-      ]
-    })
-  ]
+          dest: 'images' // <== will copy to dist/images
+        },
+      ],
+    }),
+  ],
 });
