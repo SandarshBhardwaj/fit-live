@@ -3,6 +3,7 @@ import { renderLayout } from '../layout/renderLayout.js';
 import { headerHTML } from '../layout/header.js';
 import { footerHTML } from '../layout/footer.js';
 import { loadAboutPage } from './about.js';
+import { loadJournalPage } from './journal.js';
 
 export function loadClassesPage() {
   const mainHTML = `
@@ -200,6 +201,7 @@ function setupLinkHandlers() {
       // Load appropriate page
       if(page === 'about') loadAboutPage();
       if(page === 'classes') loadClassesPage();
+      if(page === 'journal') loadJournalPage();
       // Add other pages as needed
     });
   });

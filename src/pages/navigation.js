@@ -1,7 +1,7 @@
 import { loadHomepage } from './Homepage.js';
 import { loadAboutPage } from './about.js';
 import { loadClassesPage } from './classes.js';
-
+import { loadJournalPage } from './journal.js';
 export function setupLinkHandlers() {
   const homeLink = document.getElementById("home-link");
   if (homeLink) {
@@ -26,6 +26,12 @@ export function setupLinkHandlers() {
       loadClassesPage();
     });
   }
-
+  const journalLink = document.getElementById(journal-link);
+  if (journalLink) {
+    journalLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      loadJournalPage();
+    });
+  }
   // Add more handlers if needed (e.g., Journal, 1-2-1, etc.)
 }
