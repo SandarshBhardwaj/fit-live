@@ -94,7 +94,7 @@ export function loadAboutPage() {
     });
   });
 
-  // Maintain existing functionality
+  
   document.querySelectorAll('.nav-list a').forEach(link => {
     link.classList.remove('active');
   });
