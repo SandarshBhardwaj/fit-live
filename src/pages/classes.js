@@ -4,6 +4,7 @@ import { headerHTML } from '../layout/header.js';
 import { footerHTML } from '../layout/footer.js';
 import { loadAboutPage } from './about.js';
 import { loadJournalPage } from './journal.js';
+import { loadNewsletterPage } from './newsletter.js';
 
 export function loadClassesPage() {
   const mainHTML = `
@@ -202,6 +203,7 @@ function setupLinkHandlers() {
       if(page === 'about') loadAboutPage();
       if(page === 'classes') loadClassesPage();
       if(page === 'journal') loadJournalPage();
+      if(page === 'newsletter') loadNewsletterPage();
       // Add other pages as needed
     });
   });

@@ -8,7 +8,8 @@ export const headerHTML = `
         <li><a href="#about" id="about-link" role="button">About</a></li>
         <li><a href="#classes" id="classes-link">Classes</a></li>
         <li><a href="#journal" id="journal-link">Journal</a></li>
-        <li><a href="#newsletter">Newsletter</a></li>
+       
+        <li><a href="#newsletter" id="newsletter-link">Newsletter</a></li>
       </ul>
     </nav>
   </div>

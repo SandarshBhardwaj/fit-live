@@ -4,6 +4,7 @@ import { headerHTML } from '../layout/header.js';
 import { footerHTML } from '../layout/footer.js';
 import { loadAboutPage } from './about.js';
 import { loadClassesPage } from './classes.js';
+import { loadNewsletterPage } from './newsletter.js';
 
 export function loadJournalPage() {
   const mainHTML = `
@@ -116,6 +117,7 @@ function setupJournalLinkHandlers() {
       if(page === 'about') loadAboutPage();
       if(page === 'classes') loadClassesPage();
       if(page === 'journal') loadJournalPage();
+      if(page === 'newsletter') loadNewsletterPage();
     });
   });
 }

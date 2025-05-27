@@ -8,6 +8,7 @@ import { testimonialsHTML, setupTestimonialSlider } from './testimonialsSection.
 import { loadAboutPage } from './about.js';
 import { loadClassesPage } from './classes.js';
 import { loadJournalPage } from './journal.js'; 
+import { loadNewsletterPage } from './newsletter.js';
 
 export function loadHomepage() {
   const mainHTML = `
@@ -35,7 +36,8 @@ function setupLinkHandlers() {
   const links = {
     about: document.getElementById("about-link"),
     classes: document.getElementById("classes-link"),
-    journal: document.getElementById("journal-link") 
+    journal: document.getElementById("journal-link"), 
+    newsletter: document.getElementById("newsletter-link")
   };
 
   // Generic link handler
@@ -52,6 +54,7 @@ function setupLinkHandlers() {
   handleLinkClick(links.about, loadAboutPage);
   handleLinkClick(links.classes, loadClassesPage);
   handleLinkClick(links.journal, loadJournalPage); 
+  handleLinkClick(links.newsletter, loadNewsletterPage);
 
   // Logo handler
   const logo = document.querySelector('.logo');

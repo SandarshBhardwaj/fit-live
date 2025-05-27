@@ -914,3 +914,41 @@ input, select, textarea {
     padding: 1.5rem;
   }
 }
+/* Chat Specific Styles */
+.chat-container {
+  border: 2px solid var(--peach);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.chat-messages {
+  height: 300px;
+  padding: 1rem;
+  background: rgba(243, 221, 202, 0.1);
+  overflow-y: auto;
+}
+
+.chat-input {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 0.8rem;
+}
+
+.message {
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  background: white;
+  border-radius: 8px;
+  max-width: 80%;
+}
+
+.message.instructor {
+  background: var(--peach);
+  margin-left: auto;
+}
