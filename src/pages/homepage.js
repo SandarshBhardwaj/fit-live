@@ -5,7 +5,7 @@ import { footerHTML } from '../layout/footer.js';
 import { heroHTML } from './heroSection.js';
 import { renderServicesSection } from './servicesSection.js';
 import { testimonialsHTML, setupTestimonialSlider } from './testimonialsSection.js';
-import { loadAboutPage } from './About.js';
+import { loadAboutPage } from './about.js';
 import { loadClassesPage } from './classes.js';
 import { loadJournalPage } from './journal.js'; 
 

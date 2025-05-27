@@ -2,7 +2,7 @@
 import { renderLayout } from '../layout/renderLayout.js';
 import { headerHTML } from '../layout/header.js';
 import { footerHTML } from '../layout/footer.js';
-import { loadAboutPage } from './About.js';
+import { loadAboutPage } from './about.js';
 import { loadClassesPage } from './classes.js';
 
 export function loadJournalPage() {
